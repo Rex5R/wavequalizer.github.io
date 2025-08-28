@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>wav/equalizer</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/lamejs/lame.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="title-container">
+  <h2 class="bigtxt">wav/equalizer</h2>
+  <img src="icon.png"class="title-icon">
+</div>
+
+
+  <div id="dropZone">
+    <p>Drag & drop wav here</p>
+    <input type="file" id="fileInput" accept="audio/wav" />
+  </div>
+
+  <div id="equalizer" style="display:none;">
+    <label for="presets">Presets:</label>
+    <select id="presets">
+      <option value="flat">Flat</option>
+      <option value="bass">Bass Boost</option>
+      <option value="rock">Rock</option>
+      <option value="pop">Pop</option>
+      <option value="jazz">Jazz</option>
+      <option value="classical">Classical</option>
+      <option value="vocal">Vocal Boost</option>
+    </select><br><br>
+
+    <label>Bass</label>
+    <label for="bass"><span id="bassValue">0</span></label>
+    <input type="range" id="bass" min="-30" max="30" value="0"><br>
+
+    <label>Mid</label>
+    <label for="mid"><span id="midValue">0</span></label>
+    <input type="range" id="mid" min="-30" max="30" value="0"><br>
+
+    <label>Treble</label>
+    <label for="treble"><span id="trebleValue">0</span></label>
+    <input type="range" id="treble" min="-30" max="30" value="0"><br>
+
+    <label>Volume</label>
+    <input type="range" id="volume" min="0" max="200" value="100">
+    <span id="volumeValue">100</span>%<br>
+
+    <button id="playBtn">Play</button>
+    <button id="stopBtn">Stop</button>
+
+    <button id="downloadBtn">Download Modified WAV</button><br><br><br>
+
+    <label id="link">
+      💖 Support my work! 
+      <a href="https://ko-fi.com/rex5r" target="_blank">Buy me a coffee!</a>
+    </label>
+  </div>
+  
+  <script src="equalizer.js"></script>
+</body>
+</html>
